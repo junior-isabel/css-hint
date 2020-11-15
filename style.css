@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import url('./default.css');
+@import url("./variavel.css");
+
+body {
+  counter-reset: title;
+  counter-reset: subtitle;
+}
+nav {
+  height: var(--nav-height);
+  background: var(--primary-dark-color);
+}
+section {
+  height: calc(100vh - var(--nav-height) - var(--footer-height));
+  overflow: auto;
+}
+footer {
+  height: var(--footer-height);
+  background: var(--primary-dark-color);
+}
+
+.card {
+  border: 1px solid;
+  width: calc(var(--nav-height) * 10);
+  height: calc(var(--footer-height) * 2);
+}
+.card::before {
+  content: attr(data-name) " " attr(data-date);
+  color: #ccc;
+  font-size: 20px;
+}
+.list-items:empty::before {
+  content: attr(data-alert);
+  height: 100px;
+}
+.card:not([data-name="jose"]) {
+  border: 1px solid var(--primary-dark-color);
+}
+h1 {
+  counter-increment: title;
+  counter-reset: subtitle;
+}
+h2 {
+  font-weight: normal;
+  font-size: 0.8em;
+  counter-increment: subtitle;
+}
+h1::after {
+  content: " " counter(title);
+}
+h2::after {
+  content: " " counter(title) "." counter(subtitle)
+}
+.loren {
+  width: 50%;
+  margin: auto auto;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  text-overflow: ellipsis;
+}
+.see-more:checked ~ .loren {
+  display: initial;
+}
+ul:not(.list-items) li:nth-child(2n + 1) {
+  color: red;
+}
+
+.input-text {
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  border: 1px solid #000;
+  display: inline-block;
+  width: 180px;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  caret-color: crimson;
+  resize: both;
+}
+.input-text::before {
+  position: absolute;
+  content: attr(data-placeholder);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  padding-left: 10px;
+  color: #ccc;
+  height: 30px;
+}
+.input-text:focus {
+  outline-color: cornflowerblue;
+  border-style: none;
+}

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+:root {
+  --nav-height: 30px;
+  --footer-height: 30px;
+  --primary-dark-color:  rgb(211, 42, 211);
+}
