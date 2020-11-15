@@ -3,7 +3,7 @@
 ### Conteúdo
 
 ## functions css
-`
+----
 calc
 var
 attr
@@ -16,4 +16,3 @@ not
 nth-child
 @import
 input costumizado
-`
