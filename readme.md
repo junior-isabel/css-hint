@@ -16,3 +16,7 @@ not
 nth-child
 @import
 input costumizado
+----------
+----------
+
+video completo no meu canal do youtube #junior isabel
